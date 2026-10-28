@@ -1,0 +1,5 @@
+anthropic>=1.11.0
+chromadb>=0.5.0   # 2026-10-28: PyPI latest is 1.5.9; floor left at 0.5 because the 1.x client is untested here
+python-dotenv>=1.0.0
+# Removed 2026-10-28: langchain, langchain-anthropic, langchain-community,
+# langchain-chroma, tiktoken. No file in this project imports them.

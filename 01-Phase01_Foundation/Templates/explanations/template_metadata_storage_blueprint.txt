@@ -1,0 +1,608 @@
+The Blueprint Setup
+
+```python
+"""
+TEMPLATE: Metadata Storage for AI Operations
+==============================================
+```
+This is like a title page for a recipe book. It introduces the purpose of the document, which is to explain how to keep records of information about AI operations.
+
+```python
+Purpose: Store structured data about LLM calls, RAG retrievals, and agent operations
+```
+This sentence tells you that the purpose is to save organized data about different activities involving AI, like when it makes calls.
+
+```python
+Use Case: Logging, debugging, cost tracking, quality monitoring
+```
+This explains when to use the records, such as checking if everything is working OK, figuring out what went wrong, and keeping an eye on expenses.
+
+```python
+Pattern: Dictionary (key-value pairs)
+```
+Here, it mentions that the way to store this information is by using dictionaries, which are like a box that pairs names (keys) with their values.
+
+```python
+When to use: ANY time you need to store multiple attributes about something
+```
+This tells us that any time you have different pieces of information about one thing, you can use this method.
+
+```python
+# Example 1: LLM API Call Metadata
+```
+This comment is a label indicating that the following code block is an example of data related to a specific call made to the AI model.
+
+```python
+llm_call_metadata = {
+```
+This line starts creating a dictionary called `llm_call_metadata`, which will hold all the details of a call to the language model.
+
+```python
+    "model": "claude-opus-5-5",   
+```
+Here, it's jotting down which AI model was used, like noting down the brand and version number of a gadget.
+
+```python
+    "provider": "anthropic",                 
+```
+This indicates the company that provided the AI model, similar to mentioning the manufacturer of a car.
+
+```python
+    "tokens_used": 1523,                     
+```
+This line records how many tokens were used in that call—think of tokens as words or pieces that make up a sentence.
+
+```python
+    "input_tokens": 412,                     
+```
+This is noting the number of tokens in the question or prompt given to the model, like counting how many ingredients went into a recipe.
+
+```python
+    "output_tokens": 1111,                   
+```
+Now it's counting the tokens that were produced as an answer, like measuring how much food was cooked.
+
+```python
+    "latency_ms": 842,                       
+```
+This tells how fast the AI responded; it's like measuring how quickly a coffee machine brews your drink.
+
+```python
+    "temperature": 0.7,                      
+```
+This value represents how creative or random the AI's responses can be, similar to adjusting the strength of the flavor for coffee.
+
+```python
+    "cost_usd": 0.0234,                      
+```
+This tells us how much the call cost, just like checking the price tag on a product you purchased.
+
+```python
+    "success": True,                         
+```
+This checks if the call was successful or not, like getting a thumbs up after finishing a task right.
+
+```python
+    "timestamp": "2026-02-26T14:30:00Z"     
+```
+This line notes when the call happened, similar to writing the date and time on a calendar.
+
+```python
+# How to access values:
+```
+This is a note stating the next lines are about how to take out specific information from our box (dictionary).
+
+```python
+model_used = llm_call_metadata["model"]
+```
+Here it's taking out the model name from our box, like opening a box to retrieve a specific item.
+
+```python
+cost = llm_call_metadata["cost_usd"]
+```
+This lines retrieves the cost of the session, similar to checking how much you spent at the store.
+
+```python
+print(f"Used {model_used} - Cost: ${cost}")
+```
+This line prints out the model name and its cost, like proudly announcing how much your new gadget was and what brand it is.
+
+```python
+# Example 2: Document Retrieval Result
+```
+This comment signifies the start of a new example that focuses on retrieving documents from somewhere.
+
+```python
+document_metadata = {
+```
+This creates a new dictionary that stores information specifically about a document retrieval.
+
+```python
+    "source": "internal_knowledge_base",     
+```
+This tells where the document came from, like identifying which section of a library you got a book from.
+
+```python
+    "doc_id": "doc_12345",                   
+```
+This assigns a unique ID to the document, similar to giving a membership number at a club.
+
+```python
+    "relevance_score": 0.947,                
+```
+This value indicates how relevant the document is, like receiving a score based on how well you answered the questions in a quiz.
+
+```python
+    "chunk_index": 3,                        
+```
+This shows which part of a larger document this piece is, like identifying a chapter in a book.
+
+```python
+    "verified": True,                        
+```
+This indicates whether a person has confirmed the information, like getting a stamp of approval on your completed homework.
+
+```python
+    "last_updated": "2026-01-15",           
+```
+Here, the code records when the document was last changed, akin to checking when you last revised a recipe.
+
+```python
+    "content_length": 512,                   
+```
+This notes how many characters are in this chunk, similar to measuring how long a paragraph is in a writing assignment.
+
+```python
+    "embedding_model": "text-embedding-3"    
+```
+This specifies which model was used to understand the document, like noting the brand of a tool you used for a project.
+
+```python
+# Common operations:
+```
+This comment indicates that what follows are common actions you can take with the document metadata.
+
+```python
+if document_metadata["relevance_score"] > 0.90:
+```
+This checks if the relevance score is high enough, similar to deciding if a score in a game qualifies for a prize.
+
+```python
+    print("High-quality match")
+```
+If the relevance is high, it announces that it's a good match, like winning a trophy for scoring well.
+
+```python
+if document_metadata["verified"]:
+```
+Here it's checking if the information has been confirmed, like asking if a friend has already checked their homework before showing it to the teacher.
+
+```python
+    print("Trusted source")
+```
+If verified, it prints out that the source is trustworthy, like when a teacher approves a student's work.
+
+```python
+# Example 3: Agent Decision Tracking
+```
+This comment introduces another example, which is about tracking decisions made by an agent (the AI).
+
+```python
+agent_decision = {
+```
+This creates a dictionary that holds details of an agent's decision.
+
+```python
+    "step": 4,                               
+```
+This shows which step the agent is in, like marking your place in a puzzle.
+
+```python
+    "decision": "use_search_tool",           
+```
+This notes what action the agent decided to take, similar to a player deciding which tool to use in a game.
+
+```python
+    "confidence": 0.85,                      
+```
+This indicates how sure the agent is about its decision, like feeling confident before giving a presentation in class.
+
+```python
+    "reasoning": "User query requires external knowledge",  
+```
+This gives the reason for the decision made, akin to explaining why you picked a specific way to solve a problem.
+
+```python
+    "alternatives_considered": [             
+```
+This starts a list of other options that were thought about, like writing down back-up plans before taking an exam.
+
+```python
+        "use_calculator",
+```
+This is one of the alternatives, mentioning another tool that could have been used.
+
+```python
+        "use_summarizer"
+    ],
+```
+Here’s another option, just like listing several ways to tackle a school project.
+
+```python
+    "execution_time_ms": 245,                
+```
+This line records how long it took to make the decision, similar to timing how fast you can solve a puzzle.
+
+```python
+    "tool_called": "vector_search",          
+```
+This tells what tool was actually used, like noting down the exact brand of glue you used for crafting.
+
+```python
+    "tool_success": True                     
+```
+This checks if the tool worked as intended, like confirming that your glue successfully held your craft together.
+
+```python
+# Example 4: Complete LLM Call with Context
+```
+This introduces yet another example that gives a complete picture of an LLM call.
+
+```python
+full_llm_operation = {
+```
+A new dictionary is created to hold comprehensive metadata for a full operation.
+
+```python
+    "request": {
+```
+This starts a section for storing information about the request made to the AI.
+
+```python
+        "user_query": "What is retrieval-augmented generation?",
+```
+This shows what question the user asked, like writing down the first question in a dialogue.
+
+```python
+        "system_prompt": "You are a helpful AI assistant.",
+```
+This states what the AI is supposed to do, much like a teacher instructing a student how to behave during a class discussion.
+
+```python
+        "temperature": 0.7,
+```
+This repeats the temperature setting for the response, like setting a coffee machine to brew strong coffee.
+
+```python
+        "max_tokens": 500
+    },
+```
+This indicates the maximum number of tokens (words) that can be generated, like saying you want a short report of no more than one page.
+
+```python
+    "retrieval": {
+```
+A new section begins to store data specifically about the search for documents.
+
+```python
+        "query": "RAG retrieval-augmented generation",
+```
+This tells what was searched for, like putting a specific name into an online search bar.
+
+```python
+        "num_results": 5,
+```
+This states how many results are expected, similar to saying you want to read five articles on a topic.
+
+```python
+        "top_score": 0.94,
+```
+This shows the highest relevance score among the results, like giving the top prize to an award-winning entry.
+
+```python
+        "sources": ["Wikipedia", "ArXiv", "Internal Docs"]
+    },
+```
+This names where the retrieved information comes from, like saying you found your research from three credible books.
+
+```python
+    "response": {
+```
+This section signifies the beginning of data responding to the user query.
+
+```python
+        "content": "RAG is a technique that combines...",
+```
+This states what the AI answered back with, like summarizing the main points of a book you just read.
+
+```python
+        "tokens": 234,
+```
+This notes how many tokens were in the answer, similar to counting words in an essay.
+
+```python
+        "latency_ms": 1240
+    },
+```
+The time taken to respond is recorded here, like noting down how long it took to finish a race.
+
+```python
+    "evaluation": {
+```
+This begins another section for checking how well the response was.
+
+```python
+        "factuality_score": 0.92,
+```
+This scores how true the answer is, like evaluating the accuracy of a quiz response.
+
+```python
+        "relevance_score": 0.88,
+```
+This shows how relevant the answer was to the question, akin to grading how well you stayed on topic in an essay.
+
+```python
+        "toxicity_score": 0.01
+    }
+}
+```
+This value indicates how polite or appropriate the answer was, just like a teacher grading your essay for proper language.
+
+```python
+# Accessing nested data:
+```
+This comment indicates that the next lines will show how to access information inside another dictionary.
+
+```python
+user_question = full_llm_operation["request"]["user_query"]
+```
+Here, it's retrieving the user’s question from inside the nested dictionaries, like digging through a drawer to find a specific folder.
+
+```python
+top_source = full_llm_operation["retrieval"]["sources"][0]
+```
+This line gets the first source of the retrieved documents, like picking the first book off a shelf.
+
+```python
+factuality = full_llm_operation["evaluation"]["factuality_score"]
+```
+This pulls out the factuality score from evaluations, similar to marking down the grade you received for accuracy.
+
+```python
+# COMMON MISTAKES & HOW TO AVOID THEM
+```
+This section talks about common errors that people make when writing similar code and how to avoid them.
+
+```python
+# ❌ MISTAKE 1: Using = instead of :
+```
+This indicates a common mistake of using a wrong symbol in code, like filling out a form with the wrong pen.
+
+```python
+wrong_dict = {"key" = "value"}  # SyntaxError!
+```
+The incorrect way of writing a dictionary is shown here, emphasizing it will cause an error, as if a paper is filled out wrong.
+
+```python
+# ✅ CORRECT:
+```
+This notes that the following line is the correct way to write a dictionary.
+
+```python
+correct_dict = {"key": "value"}
+```
+This shows how to properly create a dictionary, similar to correctly filling out an application form.
+
+```python
+# ❌ MISTAKE 2: Forgetting quotes around keys
+```
+This warns about another common error, like forgetting to underline important words in a note.
+
+```python
+wrong_dict = {model: "claude"}  # NameError: 'model' not defined
+```
+It incorrectly shows a key without quotes, highlighting it will lead to confusion, just as forgetting to label a box can lead to chaos.
+
+```python
+# ✅ CORRECT:
+```
+Another stop indicating correct syntax.
+
+```python
+correct_dict = {"model": "claude"}
+```
+It correctly shows the right way to define a key in a dictionary.
+
+```python
+# ❌ MISTAKE 3: Accessing keys that don't exist
+```
+This highlights an error when trying to access information that isn’t there, like trying to open a door that’s locked.
+
+```python
+metadata = {"score": 0.95}
+
+# value = metadata["confidence"]  # KeyError: 'confidence'
+```
+Trying to retrieve a non-existing key would lead to an error, just like being told you can't enter a room.
+
+```python
+# ✅ CORRECT: Check if key exists first
+```
+This indicates the correct approach before accessing keys.
+
+```python
+if "confidence" in metadata:
+```
+This checks if that key exists first.
+
+```python
+    value = metadata["confidence"]
+else:
+    value = None  # Default value
+```
+If it is there, it retrieves the value; if not, it sets the value to None, like checking for guests before making dinner.
+
+```python
+# OR use .get() with default
+```
+Here, it suggests another method to safely get a value.
+
+```python
+value = metadata.get("confidence", 0.0)  # Returns 0.0 if key missing
+```
+This method tries to get the value and gives 0.0 if it’s not found, like keeping a spare key handy.
+
+```python
+# ❌ MISTAKE 4: Not handling None values
+```
+This warns that not checking for None values can cause problems, like trying to cook without any food.
+
+```python
+metadata = {"score": None}  # Sometimes APIs return None
+
+# if metadata["score"] > 0.80:  # TypeError: '>' not supported for None
+```
+This example shows that trying to compare None to a number would cause an error, akin to trying to grade homework that's blank.
+
+```python
+# ✅ CORRECT: Check for None
+```
+It indicates that you should check for None values before using them.
+
+```python
+if metadata["score"] is not None and metadata["score"] > 0.80:
+```
+Here, it confirms there is a value before comparing it, like ensuring there's food before cooking.
+
+```python
+    print("High score")
+```
+If there's a valid score above 0.80, it congratulates the high score, much like praising a student for good grades.
+
+```python
+# RED FLAGS TO SPOT IN AI-GENERATED CODE
+```
+This introduces hints on what to look out for when reviewing code generated by AI.
+
+```python
+# 🚩 RED FLAG 1: Storing sensitive data in plain dicts
+```
+This point emphasizes the danger of storing private information out in the open.
+
+```python
+# NEVER DO THIS:
+api_key_storage = {
+```
+A warning is given about the poor practice of writing down sensitive information this way.
+
+```python
+    "api_key": "sk-1234567890",  # ⚠️ Security risk!
+```
+It's highlighting the risk of this action.
+
+```python
+    "password": "secret123"       # ⚠️ Never store plain passwords
+}
+```
+This example further stresses not to store passwords in such a way.
+
+```python
+# USE: Environment variables or secret managers instead
+```
+This suggests using safer alternatives to protect important information.
+
+```python
+# 🚩 RED FLAG 2: Inconsistent key names
+```
+This warns about not being consistent in naming keys, like having two different names for the same person in a story.
+
+```python
+retrieval_1 = {"relevance_score": 0.95}
+retrieval_2 = {"relevanceScore": 0.88}  # ⚠️ Different naming style!
+```
+These lines illustrate that having different styles can get confusing.
+
+```python
+# USE: Consistent naming (snake_case recommended in Python)
+```
+This encourages keeping names uniform so they’re easier to recognize and use.
+
+```python
+# 🚩 RED FLAG 3: Magic numbers without explanation
+```
+This indicates that using numbers without explaining them can cause misunderstandings.
+
+```python
+config = {
+    "threshold": 0.7,  # ⚠️ Why 0.7? What does this control?
+}
+```
+This shows the problem of not clarifying why a specific number is used.
+
+```python
+# BETTER: Add comments or use descriptive keys
+```
+It suggests adding comments or using clear names to explain their purpose.
+
+```python
+config = {
+    "confidence_threshold": 0.7,  # Minimum confidence for accepting LLM output
+}
+```
+This is how to make the intent clear, like writing a note to explain a recipe step.
+
+```python
+# YOUR TASK: Pattern Recognition
+```
+This section encourages recognizing patterns in the code.
+
+```python
+"""
+When you see this in AI-generated code:
+```
+This statement introduces a specific code pattern to be aware of.
+
+```python
+    result = {
+        "status": "success",
+        "data": processed_output,
+        "metrics": {"accuracy": 0.92}
+    }
+```
+This example of a dictionary has keys indicating status, main data, and performance metrics.
+
+```python
+You should immediately recognize:
+```
+This prompts you to think critically about this structure.
+
+```python
+1. This is a dictionary (curly braces)
+```
+This point recognizes the structure as a dictionary.
+
+```python
+2. It has 3 keys: "status", "data", "metrics"
+```
+This highlights the individual components inside.
+
+```python
+3. "metrics" contains nested metadata
+```
+It notes that the metrics are part of another piece of information inside.
+
+```python
+4. This is likely a function return value with metadata
+```
+Finally, it concludes that this format is typically what a function sends back.
+
+```python
+You DON'T need to memorize the syntax.
+```
+This reassures you that understanding the structure is more important than memorizing how to write it.
+
+```python
+You DO need to recognize this is "metadata storage pattern."
+```
+This final line reinforces that recognizing this overall pattern is key to understanding how to work with similar data in coding.
+```

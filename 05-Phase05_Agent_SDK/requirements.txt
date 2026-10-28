@@ -1,0 +1,6 @@
+anthropic>=1.11.0
+# claude-agent-sdk: not installed in the shared venv. PyPI latest is 0.2.174 (2026-10-24,
+# checked 2026-10-28). Raise this floor to >=0.2.174 when it is installed.
+claude-agent-sdk>=0.1.0
+pydantic>=2.13.5
+python-dotenv>=1.2.4

@@ -1,0 +1,14 @@
+# Secrets: never commit
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Local tooling and OS leftovers
+.claude/
+*Zone.Identifier
+*.db

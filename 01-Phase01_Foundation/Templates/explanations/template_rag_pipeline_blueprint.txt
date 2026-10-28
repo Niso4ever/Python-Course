@@ -1,0 +1,36 @@
+The Blueprint Setup:
+- **Step 1: Simulated User Query**
+  - This section simulates receiving a question from the user, setting the stage for the RAG process. The user query "What is retrieval-augmented generation?" is introduced and printed.
+
+- **Step 2: Vector Search (Simulated)**
+  - Instead of performing a real database search, the code defines a simulated set of search results with relevance scores. These results are printed, indicating how many documents were "retrieved" from the vector database.
+
+- **Step 3: Filter Results by Quality Threshold**
+  - Here, the results are refined based on relevance and verification criteria. Only documents with a relevance score above 0.85 are kept if they are verified. Each decision to keep or filter a document is logged and printed, summarizing the final count of documents that passed the filtering process.
+
+- **Step 4: Build Context from Filtered Documents**
+  - The best documents are selected for use based on a predefined maximum limit (in this case, 3). The content of these documents is formatted into a cohesive context string, which will be used to assist the language model in generating an answer.
+
+- **Step 5: Build Prompt for LLM**
+  - A structured prompt is assembled for the language model, integrating the context and the user’s question, which guides the LLM in providing an accurate response.
+
+- **Step 6: Call LLM (Simulated)**
+  - This step simulates sending the prompt to a language model to generate a response. A mock response is printed to simulate the output you would receive in a production scenario.
+
+- **Step 7: Add Metadata for Logging/Evaluation**
+  - Metadata regarding the operation is created for logging purposes. This includes counts of documents retrieved, filtered, and used in context, along with details of the LLM call parameters. All this information is printed for review.
+
+- **Step 8: Return Structured Response**
+  - The final output is structured to return the generated answer, the sources used, and the metadata about the process. A sample response is logged, illustrating the output format expected in practice.
+
+- **Refactored Version: Function-Based Pipeline**
+  - The code concludes with a refactored version of the RAG pipeline encapsulated in a function for reusability. It succinctly handles the same workflow with more modularity, demonstrating good software architecture.
+
+- **Common Mistakes & Red Flags**
+  - A section on pitfalls highlights issues to avoid in RAG implementation, emphasizing quality filtering, error handling, and returning sources alongside answers.
+
+- **Architectural Decisions**
+  - Important architectural considerations for RAG systems are itemized in a checklist format, serving as guidelines for future developers.
+
+- **Your Task: Pattern Recognition**
+  - The concluding block reinforces the steps that define a successful RAG implementation, emphasizing the critical sequence every architect should recognize.

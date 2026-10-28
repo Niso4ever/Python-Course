@@ -1,0 +1,5 @@
+anthropic>=1.11.0
+crewai>=0.80.0        # 2026-10-28: crewai 1.x has been on PyPI since Oct 2025; not installed or tested here
+crewai-tools>=0.14.0  # 2026-10-28: crewai-tools 1.x likewise; untested
+python-dotenv>=1.0.0
+requests>=2.31.0

@@ -1,0 +1,16 @@
+{
+  "findings": [
+    {
+      "file": "auth.py",
+      "issue": "Found SQL injection"
+    },
+    {
+      "file": "auth.py",
+      "issue": "Found SQL injection"
+    },
+    {
+      "file": "auth.py",
+      "issue": "Found SQL injection"
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+================================================================================
+NEXUS AI — INTERNAL KNOWLEDGE BASE
+Last updated: March 2026
+================================================================================
+
+SECTION 1: COMPANY OVERVIEW
+================================================================================
+
+Nexus AI is a B2B artificial intelligence platform founded in 2023, headquartered
+in San Francisco. We build enterprise-grade AI infrastructure that allows companies
+to deploy autonomous agents, RAG systems, and multi-model pipelines at scale.
+
+As of Q1 2026, Nexus AI serves over 1,200 enterprise customers across 40 countries.
+Our annual recurring revenue (ARR) reached $180M in 2025, growing 210% year-over-year.
+
+Our core products:
+- NexusRAG: Enterprise document intelligence platform
+- NexusAgent: Autonomous agent deployment framework
+- NexusOrchestrate: Multi-agent workflow automation
+- NexusOptimize: DSPy-based prompt optimization service
+
+The company has 380 employees across engineering, sales, customer success, and operations.
+
+================================================================================
+SECTION 2: PRODUCT — NEXUSRAG
+================================================================================
+
+NexusRAG is our flagship product. It allows enterprises to connect their internal
+documentation, databases, and knowledge systems to large language models.
+
+Key features (2026 edition):
+- Multi-modal ingestion: PDF, Word, Excel, PowerPoint, HTML, video transcripts
+- Hybrid search: vector similarity + BM25 keyword search combined
+- Auto-chunking: intelligent document splitting that preserves context
+- Citation tracking: every answer includes source document and page number
+- Access control: RBAC — users only see documents they're authorized for
+- Audit logs: all queries logged for compliance (SOC 2, GDPR)
+
+Pricing:
+- Starter: $2,000/month — up to 10GB documents, 5 users
+- Professional: $8,000/month — up to 100GB, 50 users, SSO
+- Enterprise: Custom pricing — unlimited storage, unlimited users, SLA
+
+Supported LLM backends:
+- Anthropic Claude (default — Sonnet 4.6 for queries, Haiku 4.5 for classification)
+- OpenAI GPT-4o
+- Self-hosted Llama 3.3 (on-premise option)
+
+================================================================================
+SECTION 3: PRODUCT — NEXUSAGENT
+================================================================================
+
+NexusAgent provides a framework for deploying autonomous AI agents in enterprise
+environments. Unlike simple chatbots, NexusAgent instances can:
+
+- Browse the web and retrieve current information
+- Execute Python code in a sandboxed environment
+- Query internal databases via SQL
+- Send emails and Slack messages (with approval workflows)
+- Create, edit, and organize files in cloud storage
+- Make API calls to external services
+
+In 2026, the average NexusAgent deployment completes 340 autonomous tasks per
+day per agent instance, with a human approval rate of less than 12% (meaning
+88% of tasks complete without human intervention).
+
+Agent templates available:
+- Research Analyst: web research, report writing, competitive intelligence
+- Data Analyst: SQL queries, chart generation, insight extraction
+- Customer Support: ticket triage, resolution drafting, escalation routing
+- Content Creator: research, drafting, SEO optimization, scheduling
+- Code Reviewer: PR analysis, bug detection, documentation generation
+
+================================================================================
+SECTION 4: ENGINEERING STACK
+================================================================================
+
+Backend:
+- Python 3.12 (primary language)
+- FastAPI for all REST services
+- PostgreSQL for relational data
+- Redis for caching and message queuing
+- ChromaDB for vector storage (self-hosted)
+- Pinecone for cloud vector storage (enterprise customers)
+
+AI/ML:
+- Anthropic Claude API (primary LLM provider — 60% of token usage)
+- LangChain for orchestration
+- DSPy for optimized pipeline compilation
+- CrewAI for multi-agent workflows
+- Sentence Transformers for embeddings (text-embedding-3-large via OpenAI)
+
+Infrastructure:
+- AWS (primary cloud) + GCP (AI/ML workloads)
+- Kubernetes for container orchestration
+- GitHub Actions for CI/CD
+- Datadog for monitoring and alerting
+
+================================================================================
+SECTION 5: HIRING AND HR POLICIES
+================================================================================
+
+Hiring process (2026 standard):
+1. AI-assisted resume screening (NexusAgent running our own product)
+2. 30-minute recruiter call
+3. 60-minute technical or domain interview
+4. Take-home project (paid, 3-4 hours)
+5. Final panel interview (2 team members + hiring manager)
+6. Offer — typically within 3 business days of final interview
+
+Current open roles (as of March 2026):
+- Senior AI Engineer (RAG specialization) — $180K-$240K + equity
+- ML Platform Engineer — $170K-$220K + equity
+- Enterprise Account Executive — $120K base + 100% OTE
+- Customer Success Manager (AI) — $100K-$130K + equity
+- Technical Writer (AI/ML) — $90K-$120K
+
+Benefits:
+- Health, dental, vision (100% premium covered for employee, 80% for family)
+- 4 weeks PTO + unlimited sick days
+- $5,000/year learning budget (conferences, courses, certifications)
+- Remote-first culture; offices in San Francisco and New York
+- Home office stipend: $2,000 one-time + $100/month
+- Quarterly team off-sites
+
+Parental leave: 16 weeks fully paid for all parents.
+
+================================================================================
+SECTION 6: CUSTOMER SUCCESS AND SUPPORT
+================================================================================
+
+Support tiers:
+- Community (Starter plan): Forum + documentation only, response within 48 hours
+- Standard (Professional plan): Email support, response within 8 business hours
+- Priority (Enterprise plan): Dedicated CSM, Slack channel, 2-hour SLA for critical issues
+
+How to file a support ticket:
+1. Log in to support.nexus.ai
+2. Select product (NexusRAG / NexusAgent / NexusOrchestrate)
+3. Select severity: Low / Medium / High / Critical
+4. Describe the issue (our AI pre-fills suggestions based on your description)
+5. Attach logs if available (auto-collected by our agent SDK)
+
+Critical severity definition: system completely unavailable OR data loss occurring.
+Critical tickets are paged to on-call engineers 24/7.
+
+Uptime SLA by plan:
+- Starter: 99.5% monthly uptime
+- Professional: 99.9% monthly uptime
+- Enterprise: 99.95% monthly uptime + scheduled maintenance windows pre-agreed
+
+================================================================================
+SECTION 7: SECURITY AND COMPLIANCE
+================================================================================
+
+Certifications (current as of 2026):
+- SOC 2 Type II (annual audit)
+- ISO 27001
+- GDPR compliant (EU data residency option available)
+- HIPAA compliant (healthcare customers — requires Business Associate Agreement)
+- FedRAMP Moderate (US government customers)
+
+Data handling:
+- Customer data is never used to train our models
+- All data encrypted at rest (AES-256) and in transit (TLS 1.3)
+- Data residency options: US, EU, APAC
+- Automatic data deletion: 90 days after contract termination (or immediately on request)
+- Penetration testing: conducted quarterly by third-party security firm
+
+AI model usage:
+- We route customer queries to Anthropic's API
+- Anthropic's zero-data-retention policy is enabled for all enterprise customers
+- No customer content is stored in Anthropic's systems beyond the API call duration
+
+================================================================================
+SECTION 8: ROADMAP (2026)
+================================================================================
+
+Q1 2026 (current):
+✅ Released NexusRAG 3.0 with hybrid search (vector + BM25)
+✅ Added video transcript ingestion
+✅ Launched NexusOrchestrate (multi-agent workflows)
+🔄 In progress: Real-time document sync (live updates as docs change)
+
+Q2 2026 (planned):
+- NexusAgent voice interface (spoken queries to agents)
+- Multi-language RAG (query in any language, answer in same language)
+- Graph RAG: knowledge graph layer over vector search
+- On-premise deployment option for regulated industries
+
+Q3 2026 (planned):
+- NexusOptimize GA: DSPy-powered prompt optimization as a service
+- Agent marketplace: pre-built agents for 50+ use cases
+- Real-time collaboration: multiple users query the same agent simultaneously
+
+Q4 2026 (planned):
+- NexusRAG 4.0: video, audio, and image native understanding
+- Autonomous pipeline builder: describe your workflow, AI builds it
+- EU headquarters: opening Dublin office
+
+================================================================================
+END OF KNOWLEDGE BASE
+================================================================================

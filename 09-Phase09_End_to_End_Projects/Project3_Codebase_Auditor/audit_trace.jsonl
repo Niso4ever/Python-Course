@@ -1,0 +1,14 @@
+{"timestamp": "2026-10-28T20:24:45.683354", "type": "input", "data": {"code_length": 77}}
+{"timestamp": "2026-10-28T20:24:45.683523", "type": "think", "data": {"attempt": 1, "prompt": "Audit this code for security issues:\ndef login(use..."}}
+{"timestamp": "2026-10-28T20:24:45.683678", "type": "input", "data": {"code_length": 27}}
+{"timestamp": "2026-10-28T20:24:45.683793", "type": "think", "data": {"attempt": 1, "prompt": "Audit this code for security issues:\ndef add(a, b)..."}}
+{"timestamp": "2026-10-28T20:24:46.184910", "type": "raw_output", "data": {"content": "{is_safe: false, vulnerability_description: 'Found SQL injection', recommended_fix: 'Use parameterized queries'}"}}
+{"timestamp": "2026-10-28T20:24:46.186139", "type": "validation_error", "data": {"error": "1 validation error for AuditResult\n  Invalid JSON: key must be a string at line 1 column 2 [type=json_invalid, input_value=\"{is_safe: false, vulnera...parameterized queries'}\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/json_invalid"}}
+{"timestamp": "2026-10-28T20:24:46.186806", "type": "think", "data": {"attempt": 2, "prompt": "Your previous output failed validation: 1 validati..."}}
+{"timestamp": "2026-10-28T20:24:46.187645", "type": "raw_output", "data": {"content": "{is_safe: true, vulnerability_description: 'None', recommended_fix: 'None'}"}}
+{"timestamp": "2026-10-28T20:24:46.188211", "type": "validation_error", "data": {"error": "1 validation error for AuditResult\n  Invalid JSON: key must be a string at line 1 column 2 [type=json_invalid, input_value=\"{is_safe: true, vulnerab...ecommended_fix: 'None'}\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/json_invalid"}}
+{"timestamp": "2026-10-28T20:24:46.188876", "type": "think", "data": {"attempt": 2, "prompt": "Your previous output failed validation: 1 validati..."}}
+{"timestamp": "2026-10-28T20:24:46.689444", "type": "raw_output", "data": {"content": "{\"is_safe\":false,\"vulnerability_description\":\"Found SQL injection\",\"recommended_fix\":\"Use parameterized queries\"}"}}
+{"timestamp": "2026-10-28T20:24:46.690793", "type": "success", "data": {"is_safe": false}}
+{"timestamp": "2026-10-28T20:24:46.693559", "type": "raw_output", "data": {"content": "{\"is_safe\":true,\"vulnerability_description\":null,\"recommended_fix\":null}"}}
+{"timestamp": "2026-10-28T20:24:46.694326", "type": "success", "data": {"is_safe": true}}
