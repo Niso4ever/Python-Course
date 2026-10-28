@@ -79,7 +79,7 @@ with client.beta.sessions.events.stream(session.id) as stream:
 
 ## Why This Matters (2026 Architect Lens)
 
-The Managed Agents API is the arrival of the "declarative intent" paradigm from REVISED_CURRICULUM_MAP:
+The Managed Agents API is the arrival of the "declarative intent" paradigm from the course road map (`Python_Course_Road_Map.md`):
 
 ```
 Old world: You write the loop → the tool call → the tool

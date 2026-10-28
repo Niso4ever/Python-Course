@@ -5,19 +5,6 @@ Welcome to the first phase of your journey as a **Senior AI Architect**. This ph
 
 ---
 
-## Phase 0 — OOP Fundamentals (Before L06)
-
-**Read this before L06 if you are new to object-oriented programming:**
-
-- **Phase 0: OOP Introduction**
-  - Why functions forget and classes remember — the core problem OOP solves.
-  - Factory model: Class = blueprint, Instance = product, `self` = this product.
-  - 4 building blocks: class declaration, `__init__`, attributes (`self.x`), methods.
-  - Three class styles in 2026: standard `class`, `@dataclass`, Pydantic `BaseModel`.
-  - Folder: [../00-Phase00_OOP_Introduction/](../00-Phase00_OOP_Introduction/)
-
----
-
 ## Phase 1(A) — Core Foundation (L00–L07)
 
 **Start here if you have zero coding experience:**
@@ -76,15 +63,6 @@ Welcome to the first phase of your journey as a **Senior AI Architect**. This ph
 ---
 
 ## Your Learning Path
-
-### Phase 0 — OOP Fundamentals:
-
-| # | File | Path |
-|:--|:-----|:-----|
-| — | README | [../00-Phase00_OOP_Introduction/README.md](../00-Phase00_OOP_Introduction/README.md) |
-| — | Main Lesson | [../00-Phase00_OOP_Introduction/OOP_FUNDAMENTALS.md](../00-Phase00_OOP_Introduction/OOP_FUNDAMENTALS.md) |
-| — | Cheatsheet | [../00-Phase00_OOP_Introduction/CHEATSHEET_OOP.py](../00-Phase00_OOP_Introduction/CHEATSHEET_OOP.py) |
-| — | Anatomy Template | [../00-Phase00_OOP_Introduction/template_ai_agent_anatomy.py](../00-Phase00_OOP_Introduction/template_ai_agent_anatomy.py) |
 
 ### Phase 1(A) Lessons — click to open:
 

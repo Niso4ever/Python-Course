@@ -1,6 +1,6 @@
 """
 ═══════════════════════════════════════════════════════════════════
-PHASE 0 CHEATSHEET: Object-Oriented Programming for AI
+L06 PART 0 CHEATSHEET: Object-Oriented Programming for AI
 ═══════════════════════════════════════════════════════════════════
 
 Quick reference for OOP concepts.

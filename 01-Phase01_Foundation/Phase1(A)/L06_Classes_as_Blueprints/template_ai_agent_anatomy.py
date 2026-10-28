@@ -323,5 +323,5 @@ Has methods                  No methods needed         Raises error if wrong typ
 Write __init__ manually      Python writes it          Python writes it
 """)
 
-print("Run this file again after reading OOP_FUNDAMENTALS.md")
+print("Run this file again after reading PASS0_OOP_FUNDAMENTALS.md")
 print("Then move to L06_Classes_as_Blueprints/ for real patterns.")

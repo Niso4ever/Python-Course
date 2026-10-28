@@ -12,7 +12,7 @@ We took the **56 templates** in this course (plus the 4 end-to-end projects) and
 (what you type)          (the existing template)
 ```
 
-This is the missing half of `VIBE_CODERS_FIELD_MANUAL.md`. The manual taught the
+This is the missing half of the field manual, `../01-Phase01_Foundation/Phase1(B)/L21_Vibe_Coding/VIBE_CODERS_FIELD_MANUAL.md`. The manual taught the
 *theory* (Spec Levels, the 5 Modes, the Constraint Sandwich). This folder is the
 *worked answer key* — every finished template, each with the prompt that would
 have produced it.
@@ -48,8 +48,7 @@ The prompt itself follows the **Constraint Sandwich**:
 
 | File | Covers | Templates |
 |------|--------|-----------|
-| [`00_Phase0_OOP.md`](00_Phase0_OOP.md) | OOP anatomy | 1 |
-| [`01_Phase1A_Foundation.md`](01_Phase1A_Foundation.md) | L01–L06 syntax patterns | 20 |
+| [`01_Phase1A_Foundation.md`](01_Phase1A_Foundation.md) | L01–L06 syntax patterns, incl. L06 Part 0 OOP anatomy | 21 |
 | [`02_Phase1B_Patterns.md`](02_Phase1B_Patterns.md) | L11–L21 architecture patterns | 13 |
 | [`03_Core_Templates.md`](03_Core_Templates.md) | The 3 reusable `Templates/` files | 3 |
 | [`04_Phase3_ToolUse.md`](04_Phase3_ToolUse.md) | Tool schemas + Pydantic | 4 |

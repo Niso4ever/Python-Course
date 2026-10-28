@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```bash
 python template_name.py          # run from inside the lesson folder
 ```
-Templates run without an API key and print simulated output. Templates in Phases 4–6 set `DEMO_MODE = True` at the top (the Phase 7 and Phase 8 templates use no flag). In Phases 0, 1 and 4 only `L24_Evaluation_Metrics/template_evaluator.py` has the flag; the other 40 have none and simply never call an API from their `__main__` block (counted 2026-10-28).
+Templates run without an API key and print simulated output. Templates in Phases 4–6 set `DEMO_MODE = True` at the top (the Phase 7 and Phase 8 templates use no flag). In Phases 1 and 3 only `L24_Evaluation_Metrics/template_evaluator.py` has the flag; the other 40 have none and simply never call an API from their `__main__` block (counted 2026-10-28).
 
 **Phase 2 projects** (require real API key):
 ```bash
@@ -43,7 +43,6 @@ Most lessons in Phase 1(A), Phase 1(B), Phase 4, Phase 5 and Phases 6–8 use th
 
 ```
 Folder                            Phase       Lessons
-00-Phase00_OOP_Introduction       Phase 0     warm-up, no Lxx numbers
 01-Phase01_Foundation/Phase1(A)   Phase 1A    L00 (setup file), L01–L07
 01-Phase01_Foundation/Phase1(B)   Phase 1B    L08–L24
 02-Phase02_Real_Systems           Phase 2     4 projects, no Lxx
@@ -57,20 +56,20 @@ Folder                            Phase       Lessons
 99-Vibe_Coding_Companion          companion   prompt answer-key for every template; no lessons
 ```
 
-The folder number is the phase number. Each phase numbers its own lessons from L01. Phase 1 is the exception: its two parts share one sequence (L01–L24), with `Lesson0_Setup_and_First_Steps.md` before L01.
+The folder number is the phase number. Each phase numbers its own lessons from L01. The OOP introduction that used to be Phase 0 is now L06 Part 0 (`PASS0_OOP_FUNDAMENTALS.md`, `CHEATSHEET_OOP.py`, `template_ai_agent_anatomy.py` in the L06 folder), because it builds on L01–L05. Phase 1 is the exception: its two parts share one sequence (L01–L24), with `Lesson0_Setup_and_First_Steps.md` before L01.
 
 When a lesson in another phase is referenced, it carries the phase prefix: `Ph4-L04` is Agentic AI lesson 4 (Structured Output), while a bare `L04` in Phase 1 text is Loops and Iteration. Phase 1 lessons are referenced without a prefix.
 
-Renumbered on 2026-10-28 (`_maintenance/renumber.py`). Old → new: Phase 3–10 became Phase 2–9 (there was never a Phase 2). Agentic AI L00, L25–L31 became L01–L08. The second Phase 1B track L18 PydanticAI, L19 Structured Outputs, L20 Evaluation Metrics became L22, L23, L24, so no two lessons share a number. Documents written before that date, such as `UPDATE_LOG_2026-10-28.md`, use the old numbers.
+Renumbered on 2026-10-28 (`_maintenance/renumber.py`). Old → new: Phase 3–10 became Phase 2–9 (there was never a Phase 2). Agentic AI L00, L25–L31 became L01–L08. The second Phase 1B track L18 PydanticAI, L19 Structured Outputs, L20 Evaluation Metrics became L22, L23, L24, so no two lessons share a number.
 
 ## Key Files
 
 - `01-Phase01_Foundation/Templates/template_rag_pipeline.py` — the most important single file in the course. L01–L07 patterns all appear here. Path B uses it as the source of truth.
-- `REVISED_CURRICULUM_MAP.md` — the 4-tier learning hierarchy (Permanent → Architectural → Reading → Reference) and 8-week plan.
-- `VIBE_CODERS_FIELD_MANUAL.md` — how to direct AI as an architect: Specification Spectrum (Levels 0–4), five session modes, Constraint Sandwich technique.
-- `AGENTS.md` — three agent personas (Tutor, Vibe Coder, Dialectic Auditor) and handoff protocol.
+- `README.md` — the entry page for anyone opening the course; points to the road map first.
+- `Python_Course_Road_Map.md` — the 4-tier learning hierarchy (Permanent → Architectural → Reading → Reference) and 8-week plan.
+- `01-Phase01_Foundation/Phase1(B)/L21_Vibe_Coding/VIBE_CODERS_FIELD_MANUAL.md` — how to direct AI as an architect: Specification Spectrum (Levels 0–4), five session modes, Constraint Sandwich technique.
 - `05-Phase05_Agent_SDK/README.md` — the Phase 5 entry point and the "three-tier landscape" framing the later phases build toward.
-- `99-Vibe_Coding_Companion/` — reverse-engineers the 56 `template_*.py` files (plus the 4 end-to-end projects) into vibe-coding prompts (one per template, the prompt-→-code direction), 60 documented entries total. Each entry is tagged with its Spec Level (0–4) and Mode (1–5) and structured as a Constraint Sandwich. Companion answer-key to `VIBE_CODERS_FIELD_MANUAL.md`; start at its `README.md`.
+- `99-Vibe_Coding_Companion/` — reverse-engineers the 56 `template_*.py` files (plus the 4 end-to-end projects) into vibe-coding prompts (one per template, the prompt-→-code direction), 60 documented entries total. Each entry is tagged with its Spec Level (0–4) and Mode (1–5) and structured as a Constraint Sandwich. Companion answer-key to the field manual in L21; start at its `README.md`.
 
 ## The Three-Tier Agent Progression (Phases 4–5)
 

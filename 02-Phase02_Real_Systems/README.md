@@ -2,7 +2,7 @@
 
 **4 Projects — 8 to 12 hours total**
 
-This phase takes everything from Phase 0 and Phase 1 and turns it into **real, runnable AI systems** — the kind that companies are deploying in 2026.
+This phase takes everything from Phase 1 and turns it into **real, runnable AI systems** — the kind that companies are deploying in 2026.
 
 ---
 

@@ -1,4 +1,4 @@
-# The Revised AI Architect Curriculum Map
+# Python Course Road Map
 ## Future-Proofed for the Age of Declarative Intent (2026+)
 
 **For:** Ahmed — transitioning from interactive programming to AI Architecture
@@ -112,7 +112,7 @@ is spreading to ALL of AI engineering.
 ║  │ L11  Async Recognition       → Spot concurrent patterns │        ║
 ║  │ L12  Advanced Debugging      → Silent failure detection │        ║
 ║  │ OOP Advanced                 → Inheritance hierarchies, │        ║
-║  │  (OOP_FUNDAMENTALS.md)         polymorphism, abstract   │        ║
+║  │  (L06 PASS0 file)              polymorphism, abstract   │        ║
 ║  └─────────────────────────────────────────────────────────┘        ║
 ║                                                                     ║
 ╠══════════════════════════════════════════════════════════════════════╣
@@ -359,7 +359,7 @@ the patterns when you see them, not enough to write them from scratch.
 | L09 Errors | 45 min | Reading tracebacks bottom-up | `CHEATSHEET_L09.py`, `error_decoder.md` |
 | L11 Async | 30 min | `async def` + `await` shape recognition | `CHEATSHEET_L11.py` |
 | L12 Debugging | 45 min | Silent failures, print audits | `CHEATSHEET_L12.py` |
-| OOP Advanced | 1 hr | Inheritance trees, abstract classes, polymorphism | `OOP_FUNDAMENTALS.md` |
+| OOP Advanced | 1 hr | Inheritance trees, abstract classes, polymorphism | `L06/PASS0_OOP_FUNDAMENTALS.md` |
 
 **Study method:** Use the 3-Pass approach. Pass 1 (recognition) only
 for most of these. Pass 2 (evaluation) for L09 and L12 since debugging
@@ -385,7 +385,7 @@ Pull them off the shelf when a specific project demands them.
 
 ## THE PRACTICE LAYER: VIBE CODER'S FIELD MANUAL
 
-> **See companion document: VIBE_CODERS_FIELD_MANUAL.md**
+> **See companion document: `01-Phase01_Foundation/Phase1(B)/L21_Vibe_Coding/VIBE_CODERS_FIELD_MANUAL.md`**
 
 The curriculum gives you KNOWLEDGE. The Field Manual gives you PRACTICE.
 Every week below pairs a curriculum topic with a vibe coding skill.
@@ -524,11 +524,11 @@ This curriculum gives you the foundation. To stay current with the
 
 ## BEYOND THE 8 WEEKS (added 2026-10-28)
 
-The 8-week plan above covers Phase 0 (OOP), L01–L17 and Phase 3. The course tree now goes further; none of this is placed in the tiers yet:
+The 8-week plan above covers the OOP introduction (now L06 Part 0), L01–L17 and Phase 3. The course tree now goes further; none of this is placed in the tiers yet:
 
 - **Phase 1(B) L18–L24** — L18–L20 Persistence / Network APIs / Serving, L21 Vibe Coding, then L22–L24 PydanticAI / Structured Outputs / Evaluation Metrics
 - **Phase 2** (`02-Phase02_Real_Systems`) — four runnable projects (RAG, agent with tools, CrewAI, DSPy)
-- **Phase 4** (`04-Phase04_Agentic_AI`, L00 and Ph4-L02–L08) — the raw agent loop, tool use, structured output, multi-agent, MCP, system design, OpenAI Agents SDK
+- **Phase 4** (`04-Phase04_Agentic_AI`, Ph4-L01–L08) — the raw agent loop, tool use, structured output, multi-agent, MCP, system design, OpenAI Agents SDK
 - **Phase 5** (`05-Phase05_Agent_SDK`, L01–L06) — Claude Agent SDK and Managed Agents
 - **Phases 6–8** (`06-Phase06_Async`, `07-Phase07_Evals`, `08-Phase08_Debugging`) — one lesson each
 - **Phase 9** (`09-Phase09_End_to_End_Projects`) — four end-to-end projects

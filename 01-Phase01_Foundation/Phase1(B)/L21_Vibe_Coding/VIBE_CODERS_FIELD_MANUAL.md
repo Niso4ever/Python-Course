@@ -514,6 +514,151 @@ of the four tiers:
 **This manual gives you the PRACTICE.**
 **Together they make you an AI Architect who ships.**
 
+### 2026 Addition: Phase 5 in the Map
+
+```
+┌─────────────────────────────────────────────┐
+│     VIBE CODING PRACTICE (this document)     │
+├─────────────────────────────────────────────┤
+│  PHASE 6: Anthropic Agent SDK               │
+│  claude_agent_sdk, Managed Agents, sessions │
+│  → Powers: SPECIFICATION + INTEGRATION modes│
+│  → Key skill: Tool description as interface │
+├─────────────────────────────────────────────┤
+│  PHASE 5: Agentic AI (Ph4-L02–L08)              │
+│  Raw loop anatomy, MCP, multi-agent         │
+│  → Powers: DEBUGGING + EXPLORATION modes    │
+├─────────────────────────────────────────────┤
+│  PHASE 4: Tool Use & Schemas                │
+│  Type hints, Pydantic, function calling     │
+│  → Powers: SPECIFICATION mode (contracts)   │
+├─────────────────────────────────────────────┤
+│  PHASE 1: Foundation (L01–L21)              │
+│  Data, logic, loops, functions, classes     │
+│  → Powers: reading and reviewing ALL code   │
+└─────────────────────────────────────────────┘
+```
+
+The tree now also has Phases 6–9 (`06-Phase06_Async`, `07-Phase07_Evals`, `08-Phase08_Debugging`, `09-Phase09_End_to_End_Projects`) and the `99-Vibe_Coding_Companion/` folder, which turns every template in the course into a worked vibe-coding prompt using the techniques in this manual. Start at `99-Vibe_Coding_Companion/README.md` for worked examples.
+
+---
+
+## PHASE 6 VIBE CODING GUIDE — Agent SDK Specific Patterns
+
+The Agent SDK introduces new surfaces where prompt quality matters most.
+Apply the Field Manual techniques to each of them.
+
+### Constraint Sandwich for Tool Definitions (Ph5-L02)
+
+The tool description is your highest-leverage vibe coding output.
+A bad description wastes every token the LLM spends guessing.
+
+```
+CONSTRAINTS:
+"Write a Tool() object following the Ph5-L02 pattern.
+Description must answer three questions in 1-3 sentences:
+(1) What does it do? (2) When should the LLM call it?
+(3) When should it NOT call it?"
+
+REQUEST:
+"Build a tool that searches a knowledge base for AI/ML concepts."
+
+VALIDATION:
+"The description should allow the LLM to correctly decide:
+- Call it for: 'What is RAG?', 'Explain MCP'
+- Don't call it for: 'Calculate 15% of 240', 'Count words in this text'
+If the LLM would be confused — rewrite the description."
+```
+
+**Prompt Debt signal:** If you accept a tool description that says only
+"searches things" → you've taken on debt. The LLM WILL call it wrong.
+
+---
+
+### Surgical Edit for Session Memory (Ph5-L04)
+
+When iterating on a multi-turn agent, don't regenerate the whole agent.
+
+```
+SURGICAL EDIT PROMPT:
+"Keep the entire agent exactly as written.
+Change ONLY the chat() function to accept a ConversationState object
+instead of a raw session_id string.
+The state should hold: session_id, turn_count, and last_intent.
+Don't change any other function signatures."
+```
+
+---
+
+### Assembly Spec for Two-Agent Pipelines (Ph5-L05)
+
+When wiring a pipeline, give AI the full contract before asking it to build.
+
+```
+ASSEMBLY SPEC:
+"I have two agents already built:
+1. run_researcher(topic: str) → ResearchResult (topic, findings, sources)
+2. run_writer(research: ResearchResult) → str (summary)
+
+Wire them into a pipeline function research_and_write(topic: str) → str.
+Rules:
+- Researcher runs first, output goes directly to writer
+- Print progress: '[1/2] Researching...' and '[2/2] Writing...'
+- Return the writer's output string
+- Do NOT change the signatures of either agent"
+```
+
+**Key discipline:** Specify the EXISTING contracts before asking AI to wire.
+If you let AI guess the contracts, it will invent incompatible interfaces.
+
+---
+
+### Scaffold Request for Managed Agents (Ph5-L06)
+
+When starting a Managed Agents integration, explore before committing.
+
+```
+SCAFFOLD REQUEST:
+"I need to build a research assistant using Anthropic Managed Agents.
+Show me 3 approaches — not code, just architecture:
+1. Single agent, stateless sessions
+2. Single agent, with memory_stores for user preferences
+3. Two agents: planner and executor
+
+For each:
+- What are the setup steps?
+- What runs per request?
+- When would I choose this over the others?"
+```
+
+This prevents you from committing to the wrong tier (L06 vs L01-L05).
+
+---
+
+### Evidence Package for Agent Debugging
+
+When an agent produces wrong answers or loops:
+
+```
+EVIDENCE PACKAGE:
+"My agent is [describe wrong behavior].
+
+Here is what I expected:
+[expected output or behavior]
+
+Here is what actually happened:
+[actual output — paste the full response]
+
+Here is the relevant code:
+[paste ONLY the agent config and system prompt]
+
+SPECIFIC QUESTION: Is the system prompt causing the LLM to [X]
+when it should [Y]? If so, suggest the minimal change."
+```
+
+**Never say:** "My agent is broken, fix it."
+**Always say:** "Here is expected vs actual. Here is the specific question."
+
 ---
 
 ## THE UPDATED 8-WEEK PLAN (with Vibe Coding Practice)
@@ -525,8 +670,8 @@ WEEK 1: Data Contracts + Mode 2 Practice
   Vibe skill: Learn to specify at Level 3 (contract)
 
 WEEK 2: Tool Interfaces + Template Injection
-  Study: L05, Phase 3 L01-L02
-  Practice: Build 2 tool functions using Template Injection
+  Study: L05, L06 (core pattern), Phase 3 L01-L02
+  Practice: Build 2 tool functions + 1 agent class using Template Injection
   Vibe skill: Inject curriculum templates into every prompt
 
 WEEK 3: Quality Gates + Surgical Editing
@@ -550,7 +695,7 @@ WEEK 6: Multi-Agent + Exploration Mode
   Vibe skill: Explore options before committing to architecture
 
 WEEK 7: Reading Sprint + Debugging Mode
-  Study: L04, L06, L08, L09, OOP
+  Study: L04, L08, L09, OOP Advanced
   Practice: Debug 3 AI-generated code samples using Evidence Packages
   Vibe skill: Full debugging mode workflow
 
@@ -558,6 +703,21 @@ WEEK 8: Capstone Session
   Build: A complete system from scratch using ALL five modes
   Apply: Specification Spectrum, Constraint Sandwich, Session Architecture
   Deliver: Working system + ARCHITECTURE.md + template library additions
+
+WEEK 9: Agent SDK — Specification Mode (Phase 5, L01–L03)
+  Study: Ph5-L01 (SDK vs raw loop), Ph5-L02 (Tool definitions), Ph5-L03 (Streaming)
+  Templates: template_first_sdk_agent.py, template_sdk_tools.py
+  Practice: Build 2 Tool() objects using the Constraint Sandwich
+  Vibe skill: Write tool descriptions that pass the LLM-decision test
+  Outcome: You can direct AI to build correct SDK agents with well-defined tools
+
+WEEK 10: Agent SDK — Integration Mode (Phase 5, L04–L06)
+  Study: Ph5-L04 (Sessions), Ph5-L05 (Subagents), Ph5-L06 (Managed Agents)
+  Templates: template_session_memory.py, template_subagent_pipeline.py
+  Practice: Wire a two-agent pipeline using the Assembly Spec technique
+  Vibe skill: Assembly Spec — specify contracts of existing components before wiring
+  Capstone: Build a Managed Agent using the Scaffold Request technique to choose the right tier
+  Outcome: You can architect and direct multi-agent SDK systems
 ```
 
 ---
@@ -589,6 +749,13 @@ BEFORE CLOSING SESSION:
   □ Session summary generated
   □ ARCHITECTURE.md updated
   □ Tomorrow's first task noted
+
+PHASE 6 ADDITIONS — Agent SDK specific:
+  □ Tool description test: "Would the LLM know WHEN and WHEN NOT to call this?"
+  □ Session contract: "Does each turn's output feed cleanly into the next turn's input?"
+  □ Pipeline contract: "Does agent 1's output type match agent 2's expected input type?"
+  □ Tier decision: "Is this agent loop, orchestration, or Managed Agents?" (Ph4-L07 + Ph5-L06)
+  □ Failure path: "What does the agent do when a tool returns is_error=True?" (Ph4-L03 S8)
 ```
 
 ---
@@ -596,3 +763,22 @@ BEFORE CLOSING SESSION:
 *This is Lesson 0.5 of the AI Architect curriculum.*
 *It goes between "setup" and "data contracts."*
 *Because the tool you'll use every day deserves its own lesson.*
+
+---
+
+## CROSS-REFERENCE MAP — Field Manual technique → Curriculum lesson
+
+| When you're building... | Use technique | Study first |
+|-------------------------|--------------|-------------|
+| Data schemas (inputs/outputs) | Constraint Sandwich (Level 3) | L01, L02, Ph3-L02 |
+| Tool functions | Template Injection + Constraint Sandwich | L05, Ph3-L01, Ph3-L02 |
+| Logic gates / routing | Surgical Edit | L03, L13 |
+| Agent with memory | Assembly Spec | L14, Ph5-L04 |
+| Two-agent pipeline | Assembly Spec + Scaffold Request | L17, Ph5-L05 |
+| SDK Tool() objects | Constraint Sandwich (description focus) | Ph5-L02 |
+| Managed Agent | Scaffold Request → pick tier | Ph5-L06, Ph4-L07 |
+| Anything broken | Evidence Package | L09, L12 |
+| Starting something new | Scaffold Request | Ph4-L07 |
+
+**The rule in one sentence:**  
+Scaffold to explore → Constraint Sandwich to specify → Surgical Edit to refine → Evidence Package to debug → Assembly Spec to integrate.

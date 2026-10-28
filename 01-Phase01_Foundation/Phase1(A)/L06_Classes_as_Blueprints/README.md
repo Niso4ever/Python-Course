@@ -5,6 +5,7 @@ Reusable class patterns for building stateful AI agents.
 ---
 
 ## Learning Materials
+0. **PASS0_OOP_FUNDAMENTALS.md** - Why classes exist: the mental model (READ FIRST if OOP is new). With it: **CHEATSHEET_OOP.py** and **template_ai_agent_anatomy.py**
 1. **PASS1_RECOGNITION.md** - Learn to recognize classes in real AI code (START HERE)
 2. **PASS_C_VISUAL.md** - See how blueprints, instances, and `self` work visually
 3. **PASS3_TEMPLATES.md** - Overview of all templates and when to use each

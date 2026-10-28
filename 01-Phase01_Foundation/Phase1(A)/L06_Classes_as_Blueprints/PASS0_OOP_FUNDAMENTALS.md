@@ -1,5 +1,56 @@
-# OOP Fundamentals for AI
-## The Factory Model — Understanding Classes from First Principles
+# L06 Part 0: OOP Fundamentals for AI
+## Read this first, before PASS1_RECOGNITION.md
+
+L06 shows you *what* classes look like in AI code. This part shows *why* they exist and how to think about them. It uses what L01–L05 taught (variables, lists, dictionaries, functions), so read it after L05.
+
+**Reading order for L06:**
+1. **PASS0_OOP_FUNDAMENTALS.md** — this file, the mental model (20 min)
+2. **CHEATSHEET_OOP.py** — keep open while reading AI code
+3. **template_ai_agent_anatomy.py** — run it and see every OOP concept labeled
+4. **PASS1_RECOGNITION.md** — then the L06 patterns
+
+---
+
+## Key Vocabulary (Plain English)
+
+| OOP Term | Plain English | AI Example |
+|:---------|:-------------|:-----------|
+| **Class** | Blueprint / Factory design | `ConversationAgent` — the design for making agents |
+| **Instance** | The product made from the blueprint | `agent = ConversationAgent(...)` — one real agent |
+| **Object** | Same as instance | `agent` is an object |
+| **Attribute** | A characteristic the object stores | `agent.history` — its stored conversation list |
+| **Method** | An action the object can perform | `agent.chat("hello")` — one of its tools |
+| **`__init__`** | Constructor — runs at creation | Sets up every new agent at birth |
+| **`self`** | This specific instance | How each agent says "my history, not yours" |
+| **Inheritance** | One class builds on another | `class MyAgent(BaseModel):` — extends BaseModel |
+
+---
+
+## The One-Sentence Version
+
+> A **class** is a factory design. An **instance** is a product the factory makes. **Attributes** are what the product stores. **Methods** are what the product can do. **`self`** is how the product refers to itself.
+
+---
+
+## Why OOP for AI (in 2026)
+
+Every major AI framework uses classes:
+
+| Framework | Class | What it represents |
+|:----------|:------|:------------------|
+| **Anthropic SDK** | `Anthropic()` | Client that holds your API key |
+| **LangChain** | `ChatAnthropic()` | LLM with memory and config |
+| **CrewAI** | `Agent(role=..., tools=[...])` | Agent with role + toolset |
+| **PydanticAI** | `Agent(model=..., deps_type=...)` | Typed agent with dependencies |
+| **LangGraph** | `StateGraph()` | Graph that holds nodes + edges |
+
+They're all classes because they all need **state** — they remember things between calls.
+
+---
+
+---
+
+## The Factory Model in depth
 
 **Goal:** By the end of this lesson, you will have a clear mental model for every class you encounter in AI code.
 
@@ -401,7 +452,7 @@ ONE QUESTION: Does it need to REMEMBER between calls?
 
 1. **CHEATSHEET_OOP.py** — quick syntax reference
 2. **template_ai_agent_anatomy.py** — see every concept labeled in one file
-3. **L06_Classes_as_Blueprints/** — now the code patterns will make full sense
+3. **PASS1_RECOGNITION.md** (this folder) — now the code patterns will make full sense
 
 > **External Reading:**
 > - [Python Docs — Classes](https://docs.python.org/3/tutorial/classes.html)
